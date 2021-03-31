@@ -25,8 +25,7 @@
     </select>
 
     <update id="updateUser" parameterType="me.moon.boardTemplate.dto.user.UserUpdateRequestDto">
-        UPDATE USER SET name = #{name}, phone = #{phone}, picture = #{picture}, modified_date =
-        NOW()
+        UPDATE USER SET name = #{name}, phone = #{phone}, picture = #{picture}, modified_date = NOW()
         WHERE id = #{id}
     </update>
 
