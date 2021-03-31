@@ -1,8 +1,8 @@
-package me.moon.boilerplate.mapper;
+package me.moon.boardTemplate.mapper;
 
-import me.moon.boilerplate.dto.user.LoginUserDto;
-import me.moon.boilerplate.dto.user.UserResponseDto;
-import me.moon.boilerplate.dto.user.UserSaveRequestDto;
+import me.moon.boardTemplate.dto.user.LoginUserDto;
+import me.moon.boardTemplate.dto.user.UserResponseDto;
+import me.moon.boardTemplate.dto.user.UserSaveRequestDto;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper

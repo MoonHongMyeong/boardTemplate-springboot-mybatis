@@ -1,4 +1,4 @@
-package me.moon.boilerplate.service;
+package me.moon.boardTemplate.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

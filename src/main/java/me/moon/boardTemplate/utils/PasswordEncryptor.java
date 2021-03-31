@@ -1,4 +1,4 @@
-package me.moon.boilerplate.utils;
+package me.moon.boardTemplate.utils;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Value;

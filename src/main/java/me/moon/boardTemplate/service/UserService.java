@@ -1,9 +1,9 @@
-package me.moon.boilerplate.service;
+package me.moon.boardTemplate.service;
 
 import lombok.RequiredArgsConstructor;
-import me.moon.boilerplate.dto.user.*;
-import me.moon.boilerplate.mapper.UserMapper;
-import me.moon.boilerplate.utils.PasswordEncryptor;
+import me.moon.boardTemplate.dto.user.*;
+import me.moon.boardTemplate.mapper.UserMapper;
+import me.moon.boardTemplate.utils.PasswordEncryptor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

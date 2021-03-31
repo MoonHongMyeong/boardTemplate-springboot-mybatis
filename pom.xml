@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>me.moon</groupId>
-	<artifactId>boilerplate</artifactId>
+	<artifactId>boardTemplate</artifactId>
 	<version>1.0</version>
-	<name>boilerplate</name>
-	<description>boilerplate-mybatis</description>
+	<name>boardTemplate</name>
+	<description>boardTemplate-mybatis</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

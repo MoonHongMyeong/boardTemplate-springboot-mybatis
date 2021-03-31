@@ -1,4 +1,4 @@
-package me.moon.boilerplate.service;
+package me.moon.boardTemplate.service;
 
 
 public interface LoginService {

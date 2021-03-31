@@ -1,4 +1,4 @@
-package me.moon.boilerplate.config;
+package me.moon.boardTemplate.config;
 
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
 import javax.sql.DataSource;
 
 @Configuration
-@MapperScan(basePackages = "me.moon.boilerplate.mapper")
+@MapperScan(basePackages = "me.moon.boardTemplate.mapper")
 @RequiredArgsConstructor
 public class DatabaseConfig {
     private final ApplicationContext applicationContext;

@@ -1,4 +1,4 @@
-package me.moon.boilerplate.dto.user;
+package me.moon.boardTemplate.dto.user;
 
 import lombok.Builder;
 import lombok.Getter;

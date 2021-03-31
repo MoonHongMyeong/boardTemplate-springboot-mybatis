@@ -1,9 +1,9 @@
-package me.moon.boilerplate.controller;
+package me.moon.boardTemplate.controller;
 
 import lombok.RequiredArgsConstructor;
-import me.moon.boilerplate.dto.user.*;
-import me.moon.boilerplate.service.LoginService;
-import me.moon.boilerplate.service.UserService;
+import me.moon.boardTemplate.dto.user.*;
+import me.moon.boardTemplate.service.LoginService;
+import me.moon.boardTemplate.service.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

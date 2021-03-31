@@ -1,4 +1,4 @@
-package me.moon.boilerplate;
+package me.moon.boardTemplate;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
