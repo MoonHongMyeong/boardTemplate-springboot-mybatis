@@ -9,3 +9,10 @@ CREATE TABLE `user` (
 	`modifed_date`	DATETIME	NULL,
 	`role`	VARCHAR(10)	NOT NULL
 );
+
+CREATE TABLE `category`(
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `name` VARCHAR(50) NOT NULL,
+    `created_date` DATETIME NULL,
+    `modified_date` DATETIME NULL
+);
