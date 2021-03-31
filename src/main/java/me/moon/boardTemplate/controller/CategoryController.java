@@ -26,7 +26,7 @@ public class CategoryController {
     }
 
     //카테고리 등록
-    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity insertCategory(@RequestBody CategorySaveRequestDto requestDto) {
         categoryService.insertCategory(requestDto.getName());
         return new ResponseEntity(new Message("카테고리 등록 성공!"), HttpStatus.OK);
