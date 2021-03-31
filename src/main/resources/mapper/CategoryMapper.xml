@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.moon.boardTemplate.mapper.CategoryMapper">
+
+    <resultMap id="category" type="me.moon.boardTemplate.dto.category.ResponseCategoryDto">
+        <id property="id" column="id"/>
+        <id property="name" column="name"/>
+        <id property="modified_date" column="modified_date"/>
+    </resultMap>
+
+    <resultMap id="Categories" type="me.moon.boardTemplate.dto.category.ResponseCategoriesDto">
+        <collection property="category" resultMap="category"/>
+    </resultMap>
+
+    <select id="toExistCategoryById" resultType="boolean">
+        SELECT EXISTS
+        (SELECT * FROM CATEGORY WHERE id = #{id})
+    </select>
+
+    <select id="toExistCategoryByName" resultType="boolean">
+        SELECT EXISTS
+        (SELECT * FROM CATEGORY WHERE name = #{name})
+    </select>
+
+    <select id="getCategories" resultMap="Categories">
+        SELECT * FROM CATEGORY
+    </select>
+
+    <insert id="insertCategory" parameterType="String">
+        INSERT INTO CATEGORY(name, created_date, modified_date)
+        VALUES(#{name}, NOW(), NOW())
+    </insert>
+
+    <update id="updateCategory" parameterType="me.moon.boardTemplate.dto.category.UpdateRequestCategoryDto">
+        UPDATE CATEGORY SET name = #{name}, modified_date = NOW()
+        WHERE id = #{id}
+    </update>
+
+    <delete id="deleteCategory" parameterType="Long">
+        DELETE FROM CATEGORY WHERE id = #{id}
+    </delete>
+</mapper>
