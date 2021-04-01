@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="me.moon.boardTemplate.mapper.CommentMapper">
+    <select id="toExistCommentById" resultType="boolean">
+        SELECT EXISTS
+        (SELECT * FROM COMMENT WHERE id = #{id})
+    </select>
+
+    <select id="getCommentList" resultType="me.moon.boardTemplate.dto.comment.CommentResponseDto">
+        SELECT c.id, c.content, c.parent_id, c.modified_date, c.user_id, u.name as userName, c.post_id
+        FROM COMMENT c INNER JOIN USER u ON u.id = c.user_id INNER JOIN POST p ON p.id = c.post_id
+        WHERE c.post_id = #{postId} AND c.removed = 'N'
+    </select>
+
+    <insert id="insertComment">
+        INSERT INTO COMMENT(content, created_date, modified_date, removed, user_id, post_id)
+        VALUES(#{content}, NOW(), NOW(), 'N', #{userId}, #{postId})
+    </insert>
+
+    <insert id="insertReplies">
+        INSERT INTO COMMENT(content, parent_id, created_date, modified_date, removed, user_id, post_id)
+        VALUES(#{content}, #{parentId}, NOW(), NOW(), 'N', #{userId}, #{postId})
+    </insert>
+
+    <update id="updateComment">
+        UPDATE COMMENT SET content = #{content}, modified_date = NOW()
+        WHERE id = #{commentId} AND removed = 'N'
+    </update>
+
+    <update id="deleteComment" parameterType="Long">
+        UPDATE COMMENT SET removed = 'Y', modified_date = NOW()
+        WHERE id = #{commentId}
+    </update>
+</mapper>
