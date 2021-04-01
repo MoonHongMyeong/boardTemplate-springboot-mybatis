@@ -31,3 +31,16 @@ CREATE TABLE `post`(
     FOREIGN KEY(`user_id`) REFERENCES USER(id) ON DELETE CASCADE,
     FOREIGN KEY(`category_id`) REFERENCES CATEGORY(id) ON DELETE CASCADE
 );
+
+CREATE TABLE `comment`(
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `content` TEXT NOT NULL,
+    `parent_id` BIGINT NULL,
+    `created_date` DATETIME NULL,
+    `modified_date` DATETIME NULL,
+    `removed` VARCHAR(5) NOT NULL,
+    `user_id` BIGINT NOT NULL,
+    `post_id` BIGINT NOT NULL,
+    FOREIGN KEY(`user_id`) REFERENCES USER(id) ON DELETE CASCADE,
+    FOREIGN KEY(`post_id`) REFERENCES POST(id) ON DELETE CASCADE
+);
