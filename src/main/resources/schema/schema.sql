@@ -16,3 +16,18 @@ CREATE TABLE `category`(
     `created_date` DATETIME NULL,
     `modified_date` DATETIME NULL
 );
+
+CREATE TABLE `post`(
+	`id` BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    `title` VARCHAR(50) NOT NULL,
+    `content` TEXT NOT NULL,
+    `image` VARCHAR(100) NOT NULL,
+    `created_date` DATETIME NULL,
+    `modified_date` DATETIME NULL,
+    `removed` VARCHAR(5) NOT NULL,
+    `temp` VARCHAR(5) NOT NULL,
+    `user_id` BIGINT NOT NULL,
+    `category_id` BIGINT NOT NULL,
+    FOREIGN KEY(`user_id`) REFERENCES USER(id) ON DELETE CASCADE,
+    FOREIGN KEY(`category_id`) REFERENCES CATEGORY(id) ON DELETE CASCADE
+);
